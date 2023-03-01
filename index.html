@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Sorteador</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="drawer">
+            <div class="logo">
+                <img src="./assets/logo.png" width="500">
+                <p>Os números gerados são</p>
+            </div>
+            <div class="div-number">
+                <span class="number">1</span>
+                <span class="number">2</span>
+                <span class="number">3</span>
+                <span class="number">4</span>
+                <span class="number">5</span>
+                <span class="number">6</span>
+            </div>
+        </div>
+        <button class="btn">Sortear</button>
+    </div>
+    <script>
+        let numeros = []; // cria um array vazio 
+        let resultado = document.querySelectorAll(".number"); // seleciona todos os elementos HTML com a classe 'number' e armazena em um array
+        let btn = document.querySelector(".btn"); // seleciona o elemento HTML com a classe 'btn'
+        
+        for(let i=0; i < 6; i++){ // loop para gerar 6 números aleatórios
+            let aleatorio = Math.floor(Math.random() * 60) + 1; // gera um número aleatório entre 1 e 60 e armazena em aleatorio
+            numeros.push(aleatorio); // adiciona o número aleatório gerado no array 'numeros'
+        }
+        
+        for(let i = 0; i < numeros.length; i++) { // loop para atualizar os valores dos elementos HTML com a classe 'number'
+            resultado[i].innerHTML = numeros[i]; // atualiza o valor do 'innerHTML' dos elementos HTML com o valor correspondente do array 'numeros'
+        }
+        
+        btn.onclick = () =>{ // adiciona um evento 'onclick' ao botão para recarregar a página
+            location.reload();
+        }
+        
+        console.log(numeros); // exibe o array 'numeros' no console do navegador
+               
+    </script>
+</body>
+
+</html>
