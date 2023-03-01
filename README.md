@@ -1,4 +1,2 @@
-��#� �s�o�r�t�e�a�d�o�r�
-�
-�
+#Sorteador
 Gerador de números aletórios entre 1 e 60.
